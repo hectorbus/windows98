@@ -12,7 +12,7 @@
     <div class="container">
       <div class="">
         <% if user_signed_in? %>
-          <%= current_user.name %>
+          <%= current_user.name %><%= image_tag(current_user.avatar.url(:thumb)) %>
           <li>
           <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
           </li>
