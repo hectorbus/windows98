@@ -1,6 +1,6 @@
 <h1>Editing article</h1>
 
-<%= form_for :article, url: article_path(@article), method: :patch do |f| %>
+<%= form_for :article, :html => {:class => "form-horizontal general_article_post"}, url: article_path(@article), method: :patch do |f| %>
 
   <% if @article.errors.any? %>
     <div id="error_explanation">
@@ -16,20 +16,27 @@
     </div>
   <% end %>
 
-  <p>
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </p>
+  <div class="form-group">
+    <%= f.label :title, class: "col-sm-2 control-label"%>
+    <div class="col-sm-10">
+      <%= f.text_field :title, class: "form-control" %>
+    </div>
+  </div>
 
-  <p>
-    <%= f.label :text %><br>
-    <%= f.text_area :text %>
-  </p>
+  <div class="form-group">
+    <%= f.label :text, class: "col-sm-2 control-label"%>
+    <div class="col-sm-10">
+      <%= f.text_field :text, class: "form-control" %>
+    </div>
+  </div>
 
-  <p>
-    <%= f.submit %>
-  </p>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <%= f.submit class: "btn btn-primary"%>
+    </div>
+  </div>
+
 
 <% end %>
 
-<%= link_to 'Back', articles_path %>
+<%= link_to icon('arrow-left'), articles_path, class: "btn btn-default" %>

@@ -1,0 +1,9 @@
+<div class="media">
+  <div class="media-left">
+    <%= image_tag("user-icon.png", size: "55") %>
+  </div>
+  <div class="media-body">
+    <h3 class="media-heading"><%= comment.user_name %> <span style="font-size: 16px;"> - <%= comment.created_at.strftime("%b %d, %Y %H:%M") %></span></h3>
+    <p><%= comment.body %></p>
+  </div>
+</div>

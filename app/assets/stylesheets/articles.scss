@@ -1,3 +1,19 @@
 // Place all the styles related to the Articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.new_article_btnContainer {
+    padding-top: 15px;
+}
+
+.table_articles {
+  width: 50%;
+}
+.article_container {
+    .well {
+      margin: 15px 20px;
+    }
+}
+
+.general_article_post {
+  width: 50%;
+}

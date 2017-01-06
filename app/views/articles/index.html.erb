@@ -1,25 +1,30 @@
-<h1>Listing articles</h1>
+<h1 class="col-lg-8">Listing articles<span style="font-size: 16px;"> - <%= pluralize(Article.count, "Article")%></span></h1>
 
-<%= link_to 'New Article', new_article_path %>
+<div class="col-lg-4 text-center new_article_btnContainer">
+  <%= link_to 'New Article', new_article_path, class: "btn btn-primary" %>
+</div>
 
-<table class=" table table-bordered">
+<table class="table table-hover table-condensed table_articles">
   <tr>
     <th>ID</th>
     <th>Title</th>
     <th>Text</th>
-    <th colspan="3" >Actions</th>
+    <th colspan="3" style="text-align: center;" >Actions</th>
   </tr>
 
   <% @articles.each do |article| %>
     <tr>
       <td><%= article.id %></td>
       <td><%= article.title %></td>
-      <td><%= article.text %></td>
-      <td><%= link_to 'Show', article_path(article) %></td>
-      <td><%= link_to 'Edit', edit_article_path(article) %></td>
-      <td><%= link_to 'Delete', article_path(article),
-              method: :delete,
-              data: { confirm: 'Are you sure?' } %></td>
-    </tr>
+      <td><%= truncate(article.text, :length => 60)%></td>
+      <td style="text-align: center;">
+        <div class="btn-group" role="group" aria-label="...">
+          <%= link_to icon('eye'), article_path(article), class: "btn btn-default" %>
+          <%= link_to icon('pencil'), edit_article_path(article), class: "btn btn-default" %>
+          <%= link_to icon('trash'), article_path(article), class: "btn btn-default",
+                                     method: :delete,
+                                     data: { confirm: 'Are you sure you want to delete this?', commit: 'DELETE', verify: 'DELETE', verify_text: 'Type "DELETE" to confirm' } %>
+        </div>
+      </td>
   <% end %>
 </table>
