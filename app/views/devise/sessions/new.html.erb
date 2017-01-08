@@ -5,7 +5,7 @@
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <ul>
           <li>
-            <span class="un"><i class="fa fa-user"></i></span><%= f.email_field :email, class: "text", placeholder: "Email"  %>
+            <span class="un"><i class="fa fa-envelope"></i></span><%= f.email_field :email, class: "text", placeholder: "Email"  %>
           </li>
           <li>
             <span class="un"><i class="fa fa-lock"></i></span><%= f.password_field :password, class: "text", placeholder: "Password", autocomplete: "off" %>

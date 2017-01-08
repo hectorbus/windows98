@@ -22,7 +22,7 @@ $color-form-3: #A6995B;
       color: #eee;
       text-decoration: none;
   }
-  ul li{height:40px; margin:15px 0; list-style:none}
+  ul li{margin:15px 0; list-style:none}
   .span{display:table; width:100%; font-size:14px;}
   .ch{display:inline-block; width:50%; color:#CCC}
   .ch a{color:#CCC; text-decoration:none}
@@ -37,4 +37,23 @@ $color-form-3: #A6995B;
   .backto>a{padding:16px; margin-bottom:10px; display:block; text-align:center; text-decoration:none; font-size:16px; color:#fff}
   #powered{padding:10px; font-size:14px; text-align:center; color:#eee}
   #powered a{text-decoration:none; color:#fff}
+}
+
+.singup-avatar-preview {
+  background-image: url("user-icon.png");
+  background-position: center;
+  background-size: cover;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  margin: 10px auto;
+  width: 100px;
+  height: 100px;
+}
+
+.singup-avatar-input {
+  color: #fff;
+  border-radius: 3px;
+  padding: 8px 5px;
+  margin: 0 auto;
+  background: rgba(45, 45, 45, 0.75);
 }
