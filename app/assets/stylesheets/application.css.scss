@@ -20,3 +20,34 @@
 
 @import "font-awesome-sprockets";
 @import "font-awesome";
+
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+body {
+  background-color: #A6995B;
+  font-family: 'Roboto', sans-serif;
+}
+
+.navbar {
+  border-radius: 0px 0px 4px 4px;
+  background-color: #2D2D2D;
+  width: 91%;
+  margin: 0 auto;
+
+  .user-avatar-thumb {
+    border: 1px solid #fff;
+    border-radius: 50%;
+    display: inline-block;
+    width: 35px;
+  }
+
+  .user-nav-status {
+    padding: 5px;
+    font-size: 15px;
+  }
+
+  .user-nav-name {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
