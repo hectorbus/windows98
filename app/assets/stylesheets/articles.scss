@@ -1,13 +1,13 @@
 // Place all the styles related to the Articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "variables";
+
 .new_article_btnContainer {
     padding-top: 15px;
 }
 
-.table_articles {
-  width: 50%;
-}
 .article_container {
     .well {
       margin: 15px 20px;
@@ -16,4 +16,38 @@
 
 .general_article_post {
   width: 50%;
+}
+
+.blog-articles {
+
+  .blog-post-preview {
+    background-color: $color-blog-1 ;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin: 10px
+  }
+
+  .blog-post-info {
+    .user-avatar-thumb {
+      border: 1px solid $color-blog-4;
+      border-radius: 50%;
+      display: inline-block;
+      width: 50px;
+    }
+  }
+
+  .blog-post-actions {
+    text-align: right;
+
+    a {
+      margin: 5px;
+      font-size: 25px;
+      text-decoration: none;
+      color: $color-blog-5;
+    }
+  }
+
+  .blog-post-text {
+    padding: 10px 20px;
+  }
 }

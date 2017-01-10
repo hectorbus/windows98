@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require_self
+ *= require hover
  */
 
  // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
@@ -23,8 +24,10 @@
 
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
+@import "variables";
+
 body {
-  background-color: #A6995B;
+  background-color: $color-blog-2;
   font-family: 'Roboto', sans-serif;
 }
 
@@ -34,12 +37,12 @@ input:-webkit-autofill {
 
 .navbar {
   border-radius: 0px 0px 4px 4px;
-  background-color: #2D2D2D;
+  background-color: $color-blog-5;
   width: 91%;
   margin: 0 auto;
 
   .user-avatar-thumb {
-    border: 1px solid #fff;
+    border: 1px solid $color-blog-4;
     border-radius: 50%;
     display: inline-block;
     width: 35px;
