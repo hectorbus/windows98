@@ -4,7 +4,25 @@
   <%= link_to 'New Article', new_article_path, class: "btn btn-primary" %>
 </div>
 
-<table class="table table-hover table-condensed table_articles">
+<div class="col-lg-12">
+  <% @articles.reverse_each do |article| %>
+    <div class="blog-post-preview well">
+      <h3><%= article.title %></h3>
+      <div class="blog-post-info">
+        <%= image_tag(article.user.avatar.url(:thumb), :class => "user-avatar-thumb") %>
+        <%= article.user_name %> |
+        <%= article.created_at.strftime('%a %d/%b/%y - %H:%M') %>
+      </div>
+      <div class="blog-post-prev">
+        <p>
+          <%= truncate(article.text, :length => 60)%>
+        </p>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<!-- <table class="table table_articles">
   <tr>
     <th>ID</th>
     <th>Title</th>
@@ -12,7 +30,7 @@
     <th colspan="3" style="text-align: center;" >Actions</th>
   </tr>
 
-  <% @articles.each do |article| %>
+  <% @articles.reverse_each do |article| %>
     <tr>
       <td><%= article.id %></td>
       <td><%= article.title %></td>
@@ -27,4 +45,4 @@
         </div>
       </td>
   <% end %>
-</table>
+</table> -->

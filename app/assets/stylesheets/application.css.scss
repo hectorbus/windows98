@@ -28,6 +28,10 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px rgb(166, 153, 91) inset !important;
+}
+
 .navbar {
   border-radius: 0px 0px 4px 4px;
   background-color: #2D2D2D;
