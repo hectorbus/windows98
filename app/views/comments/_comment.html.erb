@@ -1,9 +1,13 @@
 <div class="media">
   <div class="media-left">
-    <%= image_tag( comment.user.avatar , size: "55") %>
+    <%= image_tag(comment.user.avatar.url(:thumb), :class => "user-avatar-thumb") %>
   </div>
   <div class="media-body">
     <h3 class="media-heading"><%= comment.user_name %> <span style="font-size: 16px;"> - <%= comment.created_at.strftime("%b %d, %Y %H:%M") %></span></h3>
     <p><%= comment.body %></p>
   </div>
+  <%= link_to icon('trash'), article_comment_path(comment), class: 'hvr-grow',
+                             method: :delete,
+                             data: { confirm: 'Are you sure you want to delete this?', commit: 'DELETE', verify: 'DELETE', verify_text: 'Type "DELETE" to confirm' } %>
+
 </div>

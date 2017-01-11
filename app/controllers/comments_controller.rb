@@ -4,8 +4,14 @@ class CommentsController < ApplicationController
     @comment = current_user.comments.new(article_id: params[:article_id])
     @comment.body = comment_params[:body]
     @comment.save
-    puts @comment.errors.inspect
     redirect_to article_path(@article)
+  end
+
+  def destroy
+    @comment = Comment.find(params[:article_id])
+    @comment.destroy
+
+    redirect_to :back
   end
 
   private
