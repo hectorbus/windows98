@@ -27,7 +27,7 @@
 @import "variables";
 
 body {
-  background-color: $color-blog-2;
+  background-color: rgba($color-blog-1 - 60, .9);
   font-family: 'Roboto', sans-serif;
 }
 
@@ -40,6 +40,8 @@ input:-webkit-autofill {
   background-color: $color-blog-5;
   width: 91%;
   margin: 0 auto;
+  z-index: 1000;
+  box-shadow: 0px 0px 20px 5px  rgba($color-blog-5, .8);
 
   .user-avatar-thumb {
     border: 1px solid $color-blog-4;

@@ -4,8 +4,32 @@
 
 @import "variables";
 
-.new_article_btnContainer {
-    padding-top: 15px;
+.welcome-header {
+  float: none;
+  margin: 0 auto;
+  background-color: rgba($color-blog-5, 1);
+  border-radius: 0px 0px 90px 90px;
+  box-shadow: 0px -3px 10px 2px  rgba($color-blog-3, .8);
+  color: $color-blog-4;
+  padding: 0px 20px;
+
+  h1 {
+    margin-top: 6px;
+  }
+
+  .new-article-btn {
+    padding-top: 9px;
+
+    .btn {
+      background-color: $color-blog-4 - 25;
+      color: $color-blog-5;
+      font-weight: bold;
+      display: inline-block;
+      &:hover {
+        background-color: $color-blog-4;
+      }
+    }
+  }
 }
 
 .article_container {
@@ -19,9 +43,10 @@
 }
 
 .blog-articles {
+  color: $color-blog-4;
 
   .blog-post-preview {
-    background-color: $color-blog-1 ;
+    background-color: $color-blog-5 ;
     border-radius: 5px;
     padding: 5px 10px;
     margin: 10px
@@ -32,7 +57,7 @@
       border: 1px solid $color-blog-4;
       border-radius: 50%;
       display: inline-block;
-      width: 50px;
+      width: 35px;
     }
   }
 
@@ -44,6 +69,23 @@
       font-size: 25px;
       text-decoration: none;
       color: $color-blog-5;
+      background-color: $color-blog-2;
+      border: solid 2px $color-blog-2 - 50;
+      border-radius: 50%;
+      width: 35px;
+      height: 35px;
+
+      .fa-trash {
+        margin-right: 5px;
+      }
+
+      .fa-pencil {
+        margin-right: 4px;
+      }
+
+      .fa-eye {
+        margin-right: 3px;
+      }
     }
   }
 
