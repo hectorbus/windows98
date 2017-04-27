@@ -1,4 +1,4 @@
-<div class="login-form-welcome">
+<!-- <div class="login-form-welcome">
   <div class="form">
     <div class="header"><h2>Sing Up</h2></div>
     <div class="login">
@@ -32,5 +32,50 @@
       <div class="need">Already have an account ?</div>
       <div class="up"><%= link_to "Sign In", new_session_path(resource_name) %></div>
     </div>
+  </div>
+</div> -->
+
+
+<div class="window formUserWindow">
+  <div class="header">
+    <%= image_tag("icons/exe.gif", class: "icon") %>
+    sing_up.exe
+  </div>
+  <div class="content">
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), :html => {:class => 'form-horizontal'}) do |f| %>
+      <div class="row margin-bottom">
+        <div class="col-lg-12">
+          <span class="un col-lg-1"><i class="fa fa-envelope"></i></span>&nbsp&nbsp
+          <%= f.email_field :email, class: "text col-lg-10", placeholder: "Email"  %>
+        </div>
+      </div>
+      <div class="row margin-bottom">
+        <div class="col-lg-12">
+          <span class="un col-lg-1"><i class="fa fa-user"></i></span>&nbsp&nbsp
+          <%= f.text_field :name, class: "text col-lg-10", placeholder: "Name" %>
+        </div>
+      </div>
+      <div class="row margin-bottom">
+        <div class="col-lg-12">
+          <span class="un col-lg-1"><i class="fa fa-lock"></i></span>&nbsp&nbsp
+          <%= f.password_field :password, class: "text col-lg-10", placeholder: "Password", autocomplete: "off" %>
+        </div>
+      </div>
+      <div class="row margin-bottom">
+        <div class="col-lg-12">
+          <span class="un col-lg-1"><i class="fa fa-lock"></i></span>&nbsp&nbsp
+          <%= f.password_field :password_confirmation, class: "text col-lg-10", placeholder: "Password Confirmation", autocomplete: "off" %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6 sign">
+          <div class="need">Already have an account ?</div>
+          <div class="up"><%= link_to "Sign In", new_session_path(resource_name) %></div>
+        </div>
+        <div class="col-lg-6 margin-top">
+          <%= f.button "SingUp", :class => 'pull-right'%>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>

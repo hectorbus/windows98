@@ -22,6 +22,7 @@ gem 'coffee-rails', '~> 4.2'
 gem 'devise'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 # Confirm modal gem
 gem 'data-confirm-modal'
 # Uploading of files stuff

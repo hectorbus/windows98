@@ -1,39 +1,44 @@
-<div class="login-form-welcome">
-  <div class="form">
-    <div class="header"><h2>Sign In</h2></div>
-    <div class="login">
-      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-        <ul>
-          <li>
-            <span class="un"><i class="fa fa-envelope"></i></span><%= f.email_field :email, class: "text", placeholder: "Email"  %>
-          </li>
-          <li>
-            <span class="un"><i class="fa fa-lock"></i></span><%= f.password_field :password, class: "text", placeholder: "Password", autocomplete: "off" %>
-            </li>
-          <li>
-            <%= f.submit "LOGIN", class: "btn" %>
-          </li>
-          <% if devise_mapping.rememberable? -%>
-            <li>
-              <div class="span">
-                <span class="ch">
-                  <%= f.check_box :remember_me, id: "r" %>
-                  <label for="r">
-                    Remember Me
-                  </label>
-                </span>
-                <span class="ch">
-                  <%= link_to "Forgot your password?", new_password_path(resource_name) %>
-                </span>
-                </div>
-            </li>
-          <% end %>
-        </ul>
-      <% end %>
-    </div>
-    <div class="sign">
-      <div class="need">Need new account ?</div>
-      <div class="up"><%= link_to "Sign up", new_registration_path(resource_name) %></div>
-    </div>
+<div class="window formUserWindow">
+  <div class="header">
+    <%= image_tag("icons/exe.gif", class: "icon") %>
+    log_in.exe
+  </div>
+  <div class="content">
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name), :html => {:class => 'form-horizontal'}) do |f| %>
+      <div class="row margin-bottom">
+        <div class="col-lg-12">
+          <span class="un col-lg-1"><i class="fa fa-envelope"></i></span>&nbsp&nbsp
+          <%= f.email_field :email, class: "text col-lg-10", placeholder: "Email"  %>
+        </div>
+      </div>
+      <div class="row margin-bottom">
+        <div class="col-lg-12">
+          <span class="un col-lg-1"><i class="fa fa-lock"></i></span>&nbsp&nbsp
+          <%= f.password_field :password, class: "text col-lg-10", placeholder: "Password", autocomplete: "off" %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6 sign">
+          <div class="need">Need new account ?</div>
+          <div class="up"><%= link_to "Sign up", new_registration_path(resource_name) %></div>
+        </div>
+        <div class="col-lg-6 margin-top">
+          <%= f.button "Login", :class => 'pull-right'%>
+        </div>
+      </div>
+        <!-- <% if devise_mapping.rememberable? -%>
+            <div class="span">
+              <span class="ch">
+                <%= f.check_box :remember_me, id: "r" %>
+                <label for="r">
+                  Remember Me
+                </label>
+              </span>
+              <span class="ch">
+                <%= link_to "Forgot your password?", new_password_path(resource_name) %>
+              </span>
+              </div>
+        <% end %> -->
+    <% end %>
   </div>
 </div>

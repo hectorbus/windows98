@@ -6,39 +6,6 @@ $color-form-1: #2D2D2D;
 $color-form-2: rgba(45, 45, 45, 0.75);
 $color-form-3: #A6995B;
 
-.login-form-welcome {
-
-  *{margin:0; padding:0}
-  .form{width:400px; margin:50px auto; background: $color-form-2;}
-  .header{height:44px; background:$color-form-1}
-  .header h2{height:44px; line-height:44px; color:#fff; text-align:center}
-  .login{padding:0 20px}
-  .login span.un{width:10%; text-align:center; color:$color-form-3; border-radius:3px 0 0 3px}
-  .text{background:#12192C; width:90%; border-radius:0 3px 3px 0; border:none; outline:none; color:#999; font-family: 'Source Sans Pro', sans-serif;}
-  .text,.login span.un{display:inline-block; vertical-align:top; height:40px; line-height:40px; background:$color-form-2;}
-
-  .btn{height:40px; border:none; background:$color-form-3; width:100%; outline:none; font-family: 'Source Sans Pro', sans-serif; font-size:20px; font-weight:bold; color:#eee; border-bottom:solid 3px $color-form-3 - 50 ; border-radius:3px; cursor:pointer}
-  .btn:hover, .btn:focus, .btn.focus {
-      color: #eee;
-      text-decoration: none;
-  }
-  ul li{margin:15px 0; list-style:none}
-  .span{display:table; width:100%; font-size:14px;}
-  .ch{display:inline-block; width:50%; color:#CCC}
-  .ch a{color:#CCC; text-decoration:none}
-  .ch:nth-child(2){text-align:right}
-  /*bottom*/
-  .sign{width:100%; padding:0 5%; height:50px; display:table; background:$color-form-1}
-  .sign div{display:inline-block; width:50%; line-height:50px; color:#ccc; font-size:14px}
-  .up{text-align:right}
-  .up a{display:block; background:$color-form-3 - 25; text-align:center; height:35px; line-height:35px; width:50%; font-size:16px; text-decoration:none; color:#eee; border-bottom:solid 3px $color-form-3 - 75; border-radius:3px; font-weight:bold; margin-left:50%}
-  @media(max-width:480px){ .form{width:100%}}
-  .backto{background:#09C}
-  .backto>a{padding:16px; margin-bottom:10px; display:block; text-align:center; text-decoration:none; font-size:16px; color:#fff}
-  #powered{padding:10px; font-size:14px; text-align:center; color:#eee}
-  #powered a{text-decoration:none; color:#fff}
-}
-
 .singup-avatar-preview {
   background-image: url("user-icon.png");
   background-position: center;
