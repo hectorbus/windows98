@@ -1,5 +1,5 @@
 class WelcomeController < ApplicationController
   def index
-    redirect_to :articles
+    redirect_to :apps
   end
 end

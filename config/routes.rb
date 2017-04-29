@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :apps
   devise_for :users
-
-  resources :articles do
-  end
 
   authenticated :user do
    root 'welcome#index', as: :authenticated_root
