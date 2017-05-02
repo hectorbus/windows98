@@ -17,7 +17,21 @@ $(document).on 'turbolinks:load', ->
   $windowWidth = $('.container').width()
   $formUserWindow = $('.formUserWindow')
 
+  $('body').css 'max-height', $(document).height()
+           .css 'max-width', $(document).width()
+
   windowRandomPos($formUserWindow, $windowHeight, $windowHeight)
+
+  $('.windows-resizable').resizable
+    animate: true
+    maxHeight: 600
+    maxWidth: 1000
+    minHeight: 150
+    minWidth: 350
+
+  $("[windows-type='internet']").click ->
+    
+    return
 
   $('.windows-bar-button').click ->
     $('.menu').toggleClass 'hide'

@@ -29,6 +29,8 @@
 
 @import "variables";
 
+.ui-resizable-helper { border: 1px dotted #808080; }
+
 body {
   background-color: $blue_background;
   font-family: 'Roboto', sans-serif;
@@ -140,11 +142,41 @@ body {
   }
 }
 
+.windows-app {
+  text-align: center;
+  width: 70px;
+  height: 65px;
+  display: block;
+  margin: 12px 5px;
+  cursor: pointer;
+
+  &:hover > span{
+    text-decoration: underline;
+  }
+
+}
+
 .window {
   position: relative;
   top: random(700) + px;
   left: random(1200) + px;
   .header {
     cursor: move;
+  }
+  .content {
+  }
+
+  .internet-search {
+      height: 30px;
+      button {
+        height: 18px;
+        line-height: 0;
+        margin-left: 15px;
+      }
+  }
+
+  iframe {
+    width: 100%;
+    height: auto;
   }
 }
