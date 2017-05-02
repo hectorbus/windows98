@@ -26,11 +26,11 @@ $(document).on 'turbolinks:load', ->
     animate: true
     maxHeight: 600
     maxWidth: 1000
-    minHeight: 150
-    minWidth: 350
+    minHeight: 200
+    minWidth: 400
 
   $("[windows-type='internet']").click ->
-    
+
     return
 
   $('.windows-bar-button').click ->
