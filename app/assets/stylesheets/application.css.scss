@@ -158,8 +158,8 @@ body {
 
 .window {
   position: relative;
-  top: random(700) + px;
-  left: random(1200) + px;
+  top: 0px;
+  left: 0;
   min-width: 400px;
   min-height: 200px;
   .header {
@@ -170,6 +170,7 @@ body {
 
   &.internet-explorer {
     height: 600px;
+    position: absolute;
     .internet-search {
         height: 30px;
         button {

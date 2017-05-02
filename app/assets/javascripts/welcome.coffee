@@ -17,15 +17,9 @@ $(document).on 'turbolinks:load', ->
     readURL this
     return
 
-  $('.window').draggable({
-    handle: '.header'
-    stack: '.window'
-  })
-
   $('.internet-search').click ->
     url = $(this).find('.url').val()
     $('iframe').attr('src', 'http://web.archive.org/web/19981212034238/http://' + url)
     console.log url
     return
-
   return
