@@ -16,10 +16,4 @@ $(document).on 'turbolinks:load', ->
   $('.singup-avatar-input').change ->
     readURL this
     return
-
-  $('.internet-search').click ->
-    url = $(this).find('.url').val()
-    $('iframe').attr('src', 'http://web.archive.org/web/19981212034238/http://' + url)
-    console.log url
-    return
   return

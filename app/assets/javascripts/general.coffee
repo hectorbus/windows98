@@ -22,6 +22,13 @@ windowsMethods = ->
   $('.bclose').click ->
     $(this).closest('.window').remove()
     return
+
+  $('.internet-search button').click ->
+    url = $(this).closest('.internet-search').find('.url').val()
+    $('iframe').attr('src', 'http://web.archive.org/web/19981212034238/http://' + url)
+    console.log url
+    return
+
   return
 
 $(document).on 'turbolinks:load', ->
@@ -53,24 +60,26 @@ $(document).on 'turbolinks:load', ->
       when 'internet'
         $('body').append internetExplorerHtml
       when 'buscaminas'
-        $('body').append buscaminas
+        $('body').append buscaminasHtml
     windowsMethods()
+    console.log attrName
     return
 
   $('.windows-app-sm').click ->
-    attrName = $(this).attr('windows-app-open')
+    attrName = $(this).closest('li').attr('windows-app-sm')
     switch attrName
-      when 'internet-sm'
+      when 'internet'
         $('body').append internetExplorerHtml
-      when 'buscaminas-sm'
-        $('body').append buscaminas
+      when 'buscaminas'
+        $('body').append buscaminasHtml
+    windowsMethods()
     $('.menu').addClass 'hide'
     $('.windows-bar-inset').removeClass 'active-button'
-    windowsMethods()
+    console.log attrName
     return
 
   return
 
 internetExplorerHtml = "<div class='window windows-resizable internet-explorer' style='width:800px'> <div class='header'> <img class='icon' src='/assets/icons/internet-c2f92c7ed7cd9b61234b91d8afa8ae41d9df2a2d079880ab1402c677f08530ab.gif' alt='Internet'> Internet_Explorer.exe <div class='buttons'> <button class='min'>_</button> <button class='max'>☐</button> <button class='bclose'>X</button> </div> </div> <div class='content'> <div class='internet-search'> <input type='text' class='text col-lg-10 url' value='www.yahoo.com'> <button type='button' name='button'>Buscar</button> </div> <iframe src='http://web.archive.org/web/19981212034238/http://www.yahoo.com' class='browser' width='100%' height='100%'></iframe> </div> </div> "
 
-buscaminas = "<div class='window buscaminas-app' style='width:300px'> <div class='header'> <img class='icon' src='/assets/icons/exe-14ddfbc9a59fd8e2b385a0b6d106c07d42b00514ce0644577800df7729185423.gif' alt='Exe'> KMines.exe <div class='buttons'> <button class='min'>_</button> <button class='max'>☐</button> <button class='bclose'>X</button> </div> </div> <div class='content'> <iframe src='http://buscaminas.eu/' width='100%' height='100%' scrolling='no' ></iframe> </div> </div>"
+buscaminasHtml = "<div class='window buscaminas-app' style='width:300px'> <div class='header'> <img class='icon' src='/assets/icons/kmines-16fb982fb490f59281e156264a50ea83d265c0e47eb1199fbde56ef916c5f265.gif' alt='Exe'> KMines.exe <div class='buttons'> <button class='min'>_</button> <button class='max'>☐</button> <button class='bclose'>X</button> </div> </div> <div class='content'> <iframe src='http://buscaminas.eu/' width='100%' height='100%' scrolling='no' ></iframe> </div> </div>"
