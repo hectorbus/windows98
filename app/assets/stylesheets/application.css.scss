@@ -150,6 +150,10 @@ body {
   margin: 12px 5px;
   cursor: pointer;
 
+  span {
+    padding: 0;
+  }
+
   &:hover > span{
     text-decoration: underline;
   }
@@ -157,8 +161,8 @@ body {
 }
 
 .window {
-  position: relative;
-  top: 0px;
+  position: absolute;
+  top: 0;
   left: 0;
   min-width: 400px;
   min-height: 200px;
@@ -181,7 +185,17 @@ body {
     }
   }
 
-  iframe {
+  &.buscaminas-app {
+    width: 203px !important;
+    min-width: 0;
+    min-height: 0;
+
+    iframe {
+      height: 230px;
+    }
+  }
+
+  iframe.browser {
     overflow: hidden;
     overflow-x: hidden;
     overflow-y: hidden;
