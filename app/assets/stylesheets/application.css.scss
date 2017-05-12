@@ -172,6 +172,10 @@ body {
   .content {
   }
 
+  &.formUserWindow {
+    min-height: 130px;
+  }
+
   &.internet-explorer {
     height: 600px;
     position: absolute;
@@ -185,6 +189,55 @@ body {
     }
   }
 
+  &.paint-app {
+    width: 704px !important;
+    height: 560px;
+
+    .paint-options {
+      height: 30px;
+      border: 2px inset;
+      width: 99.4% !important;
+      margin: 2px auto;
+
+      .option-cont {
+        border: 1px solid;
+        width: 20px;
+        height: 20px;
+        display: inline-block;
+        margin: 3px 0px;
+        cursor: pointer;
+      }
+
+      .brush-type {
+        text-align: center;
+        img {
+          width: 15px;
+        }
+      }
+
+      .brush-size {
+        text-align: center;
+        border: 1px inset;
+        vertical-align: top;
+        overflow: hidden;
+        width: 23px;
+        &:nth-child(2) {
+          font-size: 23px;
+          line-height: 12px;
+        }
+        &:nth-child(3) {
+          font-size: 34px;
+          line-height: 10px;
+        }
+      }
+    }
+
+    canvas {
+      border: 2px inset;
+      cursor: crosshair;
+    }
+  }
+
   &.buscaminas-app {
     width: 203px !important;
     min-width: 0;
@@ -195,7 +248,7 @@ body {
     }
   }
 
-  iframe.browser {
+  iframe.browser{
     overflow: hidden;
     overflow-x: hidden;
     overflow-y: hidden;
