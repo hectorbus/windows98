@@ -1,0 +1,29 @@
+.fx-app {
+  width: 650px !important;
+  height: 500px;
+  .cont {
+    height: 30px;
+    border: 2px inset;
+    margin: 2px auto;
+    &.in-cont {
+      padding-top: 10px;
+      height: 425px;
+    }
+  }
+  .title-box {
+    text-align: center;
+    span {
+      font-size: 1.5em;
+      font-variant: small-caps;
+      font-weight: bold;
+    }
+  }
+  table, td, th {
+    border: 1px solid;
+    border-collapse: collapse;
+    text-align: center;
+    input {
+      width: 86px;
+    }
+  }
+}

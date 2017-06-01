@@ -28,7 +28,6 @@ windowsMethods = ->
     $('iframe').attr('src', 'http://web.archive.org/web/19981212034238/http://' + url)
     console.log url
     return
-
   return
 
 paintMethods = ->
@@ -57,6 +56,132 @@ paintMethods = ->
     return
   return
 
+openAppMethods = ->
+  $('.windows-app').dblclick ->
+    attrName = $(this).attr('windows-app-open')
+    switch attrName
+      when 'internet'
+        $('body').append internetExplorerHtml
+      when 'buscaminas'
+        $('body').append buscaminasHtml
+      when 'paint'
+        $('body').append paintHtml
+        paintMethods()
+      when 'meme'
+        ajaxCallmeme '.win98', '/apps/meme'
+    windowsMethods()
+    return
+
+  $('.windows-app-sm').click ->
+    attrName = $(this).closest('li').attr('windows-app-sm')
+    switch attrName
+      when 'internet'
+        $('body').append internetExplorerHtml
+      when 'buscaminas'
+        $('body').append buscaminasHtml
+      when 'paint'
+        $('body').append paintHtml
+        paintMethods()
+      when 'fx'
+        ajaxCallfx '.win98', '/apps/fx'
+        fxMethods()
+      when 'meme'
+        ajaxCallmeme '.win98', '/apps/meme'
+    windowsMethods()
+    $('.menu').addClass 'hide'
+    $('.windows-bar-inset').removeClass 'active-button'
+    return
+  return
+
+ajaxCallfx = (selector, route) ->
+  $.ajax(url: route).done (html) ->
+    $(selector).append html
+    openAppMethods()
+    otherWindowsMethods()
+    windowsMethods()
+    fxMethods()
+  return
+
+ajaxCallmeme = (selector, route) ->
+  $.ajax(url: route).done (html) ->
+    $(selector).append html
+    openAppMethods()
+    otherWindowsMethods()
+    windowsMethods()
+  return
+
+fxMethods = ->
+  $('button.fx-submit').click ->
+    sumX = 0; sumXSRoot = 0; sumY = 0; sumXY = 0; a = 0; b = 0; i = 0
+    n = parseInt($('select#fx-quantity').val())
+    $('.sumatorias, .ecuacion').empty()
+    while i < n
+      x = parseFloat($(".input-x-" + i).val())
+      y = parseFloat($(".input-y-" + i).val())
+      sumXSRoot += x * x
+      sumX += x
+      sumY += y
+      sumXY += x * y
+      console.log x, y
+      i++
+    b = ((n * sumXY) - sumX * sumY)/(n * sumXSRoot - sumX * sumX)
+    a = (sumY - b * sumX)/(n)
+    $('.sumatorias').append "<h2>Σx = " + sumX + "</h2>"
+    $('.sumatorias').append "<h2>Σx = " + sumX + "</h2>"
+    $('.sumatorias').append "<h2>Σy = " + sumY + "</h2>"
+    $('.sumatorias').append "<h2>Σxy = " + sumXY + "</h2>"
+    $('.ecuacion').append "<h2>y = " + a.toFixed(4) + " + " + b.toFixed(4) + "x</h2>"
+
+    return
+
+  $('select#fx-quantity').on 'change', ->
+    $('table > tbody').empty()
+    quantity = parseInt($(this).val())
+    i = 0
+    while i < quantity
+      $('table > tbody').append "<tr><td><input type='number' value='0' class='input-x-" + i + "'></td>" + "<td><input type='number' value='0' class='input-y-" + i + "'></td></tr>"
+      i++
+  return
+
+updateMmme = ->
+  $memeSelector = $('#memeSelector')
+  $topText = $('#top-text')
+  $bottomText = $('#bottom-text')
+
+  link = 'http://apimeme.com/meme?' + $.param(
+    'meme': $memeSelector.val()
+    'top': $topText.val()
+    'bottom': $bottomText.val())
+
+  $('#meme-image').attr 'src', link
+  $('#meme-link').text(link).attr 'href', link
+  console.log link, $memeSelector, $topText, $bottomText
+  return
+
+$('#memeForm').change(->
+  updateMmme()
+  return
+).submit ->
+  updateMmme()
+  false
+
+updateMmme()
+
+otherWindowsMethods = ->
+  $('.windows-bar-button').click ->
+    $('.menu').toggleClass 'hide'
+    $('.windows-bar-inset').toggleClass 'active-button'
+    return
+
+  $('.virus').click ->
+    $('.windows-app, .windows-bar, .window').glitch
+      maxint: 1
+      maxglittch: 5
+      direction: 'random'
+    openAppMethods()
+    return
+  return
+
 $(document).on 'turbolinks:load', ->
   $('#current_timer').countdowntimer
     currentTime: true
@@ -74,40 +199,8 @@ $(document).on 'turbolinks:load', ->
 
   windowRandomPos($formUserWindow, $windowHeight, $windowHeight)
   windowsMethods()
-
-  $('.windows-bar-button').click ->
-    $('.menu').toggleClass 'hide'
-    $('.windows-bar-inset').toggleClass 'active-button'
-    return
-
-  $('.windows-app').dblclick ->
-    attrName = $(this).attr('windows-app-open')
-    switch attrName
-      when 'internet'
-        $('body').append internetExplorerHtml
-      when 'buscaminas'
-        $('body').append buscaminasHtml
-      when 'paint'
-        $('body').append paintHtml
-        paintMethods()
-    windowsMethods()
-    return
-
-  $('.windows-app-sm').click ->
-    attrName = $(this).closest('li').attr('windows-app-sm')
-    switch attrName
-      when 'internet'
-        $('body').append internetExplorerHtml
-      when 'buscaminas'
-        $('body').append buscaminasHtml
-      when 'paint'
-        $('body').append paintHtml
-        paintMethods()
-    windowsMethods()
-    $('.menu').addClass 'hide'
-    $('.windows-bar-inset').removeClass 'active-button'
-    return
-
+  openAppMethods()
+  otherWindowsMethods()
   return
 
 internetExplorerHtml = "<div class='window windows-resizable internet-explorer' style='width:800px;'> <div class='header'> <img class='icon' src='/assets/icons/internet-c2f92c7ed7cd9b61234b91d8afa8ae41d9df2a2d079880ab1402c677f08530ab.gif' alt='Internet'> Internet_Explorer.exe <div class='buttons'> <button class='min'>_</button> <button class='max'>☐</button> <button class='bclose'>X</button> </div> </div> <div class='content'> <div class='internet-search'> <input type='text' class='text col-lg-10 url' value='www.yahoo.com'> <button type='button' name='button'>Buscar</button> </div> <iframe src='http://web.archive.org/web/19981212034238/http://www.yahoo.com' class='browser' width='100%' height='100%'></iframe> </div> </div> "

@@ -23,6 +23,18 @@
                 <%= image_tag("icons/kmines.gif", class: "icon") %>
                 KMines
               </li>
+              <li class="item windows-app-sm virus">
+                <%= image_tag("icons/virus.gif", class: "icon") %>
+                Not a Virus
+              </li>
+              <li class="item windows-app-sm" windows-app-sm="fx">
+                <%= image_tag("icons/fx.gif", class: "icon") %>
+                fx
+              </li>
+              <li class="item windows-app-sm" windows-app-sm="meme">
+                <%= image_tag("icons/meme.gif", class: "icon") %>
+                memeGen
+              </li>
             </ul>
           </li>
           <li class="item folder">
@@ -74,14 +86,14 @@
             Run...
           </li>
           <li class="divider"></li>
-          <li class="item">
-            <% if user_signed_in? %>
-              <%= link_to(destroy_user_session_path, :method => :delete) do%>
-                <%= image_tag("icons/logoff.gif", class: "icon") %>
-                Log Off Win98...
-              <% end %>
+          <% if user_signed_in? %>
+            <%= link_to(destroy_user_session_path, :method => :delete) do%>
+              <li class="item">
+                    <%= image_tag("icons/logoff.gif", class: "icon") %>
+                    Log Off Win98...
+              </li>
             <% end %>
-          </li>
+          <% end %>
           <li class="item">
             <%= image_tag("icons/shutdown.gif", class: "icon") %>
             Shut Down...
@@ -94,8 +106,8 @@
         <span>Start</span>
       </button>
     </div>
-    <div class="windows-bar-space">
-
+    <div class="windows-bar-space col-lg-10">
+      <%= current_user.name %>
     </div>
     <div class="windows-bar-items pull-right">
       <p id="current_timer">12:00PM</p>

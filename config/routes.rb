@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
 
-  # resources :apps
+
   devise_for :users
+
+  # resources :users, only:[] do
+  #
+  # end
 
   authenticated :user do
    root 'welcome#index', as: :authenticated_root
@@ -10,5 +14,8 @@ Rails.application.routes.draw do
   devise_scope :user do
     root to: "devise/sessions#new"
   end
+
+  get "/apps/fx" => 'welcome#fx'
+  get "/apps/meme" => 'welcome#meme'
 
 end

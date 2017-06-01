@@ -12,8 +12,31 @@ readURL = (input) ->
     reader.readAsDataURL input.files[0]
   return
 
+$updateMmme = ->
+  $memeSelector = $('#memeSelector')
+  $topText = $('#top-text')
+  $bottomText = $('#bottom-text')
+
+  link = 'http://apimeme.com/meme?' + $.param(
+    'meme': $memeSelector.val()
+    'top': $topText.val()
+    'bottom': $bottomText.val())
+
+  $('#meme-image').attr 'src', link
+  $('#meme-link').text(link).attr 'href', link
+  return
+
 $(document).on 'turbolinks:load', ->
   $('.singup-avatar-input').change ->
     readURL this
     return
+
+  $('#memeForm').change(->
+    $updateMmme()
+    return
+  ).submit ->
+    $updateMmme()
+    false
+
+  $updateMmme()
   return

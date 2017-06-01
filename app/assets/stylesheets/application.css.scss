@@ -248,6 +248,17 @@ body {
     }
   }
 
+  &.meme-app {
+    min-width: 800px !important;
+    min-height: 280px;
+    overflow: hidden;
+    padding: 0px 0px 15px 0px;
+
+    img {
+      width: 100%;
+    }
+  }
+
   iframe.browser{
     overflow: hidden;
     overflow-x: hidden;

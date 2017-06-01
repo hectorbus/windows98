@@ -19,3 +19,4 @@
 //= require data-confirm-modal
 //= require countdownTimer.min
 //= require jqscribble
+//= require glitch

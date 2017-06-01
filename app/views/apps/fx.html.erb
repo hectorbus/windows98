@@ -1,0 +1,108 @@
+<div class='window fx-app' style='width:300px;'>
+  <div class='header'>
+    <%= image_tag("icons/fx.gif", class: "icon") %>
+    fx.exe
+    <div class='buttons'>
+      <button class='min'>_</button>
+      <button class='max'>☐</button>
+      <button class='bclose'>X</button>
+    </div>
+  </div>
+  <div class='content'>
+    <div class="title-box cont">
+      <span>Cálculo de la línea de regresión lineal</span>
+    </div>
+    <div class="cont in-cont col-lg-4">
+      <label for="fx-quantity" class="col-lg-8"># de Registros:</label>
+      <select id="fx-quantity" class="col-lg-4">
+        <option value="1" >1</option>
+        <option value="2" >2</option>
+        <option value="3" >3</option>
+        <option value="4" >4</option>
+        <option value="5" >5</option>
+        <option value="6" >6</option>
+        <option value="7" >7</option>
+        <option value="8" >8</option>
+        <option value="9" >9</option>
+        <option value="10">10</option>
+        <option value="11" >11</option>
+        <option value="12" >12</option>
+        <option value="13" selected="selected">13</option>
+      </select>
+      <table class="col-lg-12">
+        <thead>
+          <th>X</th>
+          <th>Y</th>
+        </thead>
+        <tbody class="fx-inputs">
+          <tr>
+            <td><input type="number" value="0" class="input-x-0"></td>
+            <td><input type="number" value="0" class="input-y-0"></td>
+          </tr>
+          <tr>
+            <td><input type="number" value="0" class="input-x-1"></td>
+            <td><input type="number" value="0" class="input-y-1"></td>
+          </tr>
+          <tr>
+            <td><input type="number" value="0" class="input-x-2"></td>
+            <td><input type="number" value="0" class="input-y-2"></td>
+          </tr>
+          <tr>
+            <td><input type="number" value="0" class="input-x-3"></td>
+            <td><input type="number" value="0" class="input-y-3"></td>
+          </tr>
+          <tr>
+            <td><input type="number" value="0" class="input-x-4"></td>
+            <td><input type="number" value="0" class="input-y-4"></td>
+          </tr>
+          <tr>
+            <td><input type="number" value="0" class="input-x-5"></td>
+            <td><input type="number" value="0" class="input-y-5"></td>
+          </tr>
+          <tr>
+            <td><input type="number" value="0" class="input-x-6"></td>
+            <td><input type="number" value="0" class="input-y-6"></td>
+          </tr>
+          <tr>
+            <td><input type="number" value="0" class="input-x-7"></td>
+            <td><input type="number" value="0" class="input-y-7"></td>
+          </tr>
+          <tr>
+            <td><input type="number" value="0" class="input-x-8"></td>
+            <td><input type="number" value="0" class="input-y-8"></td>
+          </tr>
+          <tr>
+            <td><input type="number" value="0" class="input-x-9"></td>
+            <td><input type="number" value="0" class="input-y-9"></td>
+          </tr>
+          <tr>
+            <td><input type="number" value="0" class="input-x-9"></td>
+            <td><input type="number" value="0" class="input-y-9"></td>
+          </tr>
+          <tr>
+            <td><input type="number" value="0" class="input-x-9"></td>
+            <td><input type="number" value="0" class="input-y-9"></td>
+          </tr>
+          <tr>
+            <td><input type="number" value="0" class="input-x-9"></td>
+            <td><input type="number" value="0" class="input-y-9"></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="col-lg-12" style="text-align:center;padding: 17px;position: absolute;bottom: 0;right: 0px;">
+        <button type="button" class="fx-submit">Calcular</button>
+      </div>
+    </div>
+    <div class="cont in-cont col-lg-8">
+      <div class="title-box">
+        <span>Resultados</span>
+      </div>
+      <div class="col-lg-12 sumatorias">
+        <h2></h2>
+      </div>
+      <div class="col-lg-12 ecuacion">
+
+      </div>
+    </div>
+  </div>
+</div>
