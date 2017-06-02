@@ -155,7 +155,7 @@ updateMmme = ->
 
   $('#meme-image').attr 'src', link
   $('#meme-link').text(link).attr 'href', link
-  console.log link, $memeSelector, $topText, $bottomText
+  $('#download-meme').attr('href', link)
   return
 
 $('#memeForm').change(->

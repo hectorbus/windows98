@@ -257,6 +257,44 @@ body {
     img {
       width: 100%;
     }
+
+    label {
+      text-align: left
+    }
+
+    #download-meme {
+      -webkit-font-smoothing: none;
+      -moz-osx-font-smoothing: none;
+      font-size: 11px;
+      font-family: Tahoma, Verdana;
+      color: #070707;
+      background: #bfbfbf;
+      border: 1px solid;
+      border-top-color: #dfdfdf;
+      border-left-color: #dfdfdf;
+      border-right-color: #808080;
+      border-bottom-color: #808080;
+      box-shadow: 1px 1px 0 0 #000;
+      text-align: center;
+      outline: none;
+      padding: 4px;
+      cursor: pointer;
+
+      &:enabled {
+        color: #070707;
+      }
+      &:disabled {
+        color: #818181;
+        text-shadow: 1px 1px #fff;
+      }
+      &:active:enabled {
+        box-shadow: 1px 1px 0 0 #000 inset;
+        border-top-color: #808080;
+        border-left-color: #808080;
+        border-right-color: #dfdfdf;
+        border-bottom-color: #dfdfdf;
+      }
+    }
   }
 
   iframe.browser{
